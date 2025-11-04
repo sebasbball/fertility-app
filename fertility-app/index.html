@@ -9,6 +9,9 @@
 </head>
 <body>
 
+  <!-- ============================================ -->
+  <!-- HEADER: Logo, título y navegación por tabs -->
+  <!-- ============================================ -->
   <header class="header">
     <div class="logo">
       <div class="icono">💗</div>
@@ -16,6 +19,7 @@
       <p>Seguimiento de fertilidad y ciclo menstrual</p>
     </div>
 
+    <!-- Navegación con tabs -->
     <nav class="tabs">
       <button class="active">Calendario</button>
       <button>Estadísticas</button>
@@ -24,20 +28,40 @@
     </nav>
   </header>
 
+  <!-- ============================================ -->
+  <!-- CONTENEDOR PRINCIPAL: Layout de 2 columnas -->
+  <!-- ============================================ -->
   <main class="contenedor">
-    <!-- COLUMNA IZQUIERDA -->
+    
+    <!-- ============================================ -->
+    <!-- COLUMNA IZQUIERDA: Calendario del ciclo -->
+    <!-- ============================================ -->
     <section class="calendario">
       <h2>Calendario del Ciclo</h2>
       <p>Selecciona un día para ver más detalles</p>
 
       <div class="calendar-box">
+        <!-- Encabezado del calendario con navegación -->
         <div class="calendar-header">
           <button>&lt;</button>
           <h3>Noviembre 2025</h3>
           <button>&gt;</button>
         </div>
 
+        <!-- Encabezado con días de la semana -->
+        <div class="calendar-weekdays">
+          <div>Dom</div>
+          <div>lun</div>
+          <div>Mar</div>
+          <div>Miér</div>
+          <div>Jue</div>
+          <div>Vier</div>
+          <div>Sáb</div>
+        </div>
+
+        <!-- Grid del calendario con todos los días del mes -->
         <div class="calendar-grid">
+          <!-- Semana 1: Final de octubre + inicio de noviembre -->
           <div class="dia muted">26</div>
           <div class="dia periodo">27</div>
           <div class="dia periodo">28</div>
@@ -46,38 +70,82 @@
           <div class="dia periodo">31</div>
           <div class="dia">1</div>
 
+          <!-- Semana 2 -->
           <div class="dia">2</div>
+          <div class="dia">3</div>
           <div class="dia activo">4</div>
           <div class="dia">5</div>
           <div class="dia">6</div>
+          <div class="dia">7</div>
+          <div class="dia">8</div>
+
+          <!-- Semana 3 -->
+          <div class="dia">9</div>
+          <div class="dia">10</div>
           <div class="dia fertil">11</div>
           <div class="dia fertil">12</div>
           <div class="dia fertil">13</div>
+          <div class="dia">14</div>
+          <div class="dia">15</div>
+
+          <!-- Semana 4 -->
+          <div class="dia">16</div>
+          <div class="dia">17</div>
+          <div class="dia">18</div>
+          <div class="dia">19</div>
+          <div class="dia">20</div>
+          <div class="dia">21</div>
+          <div class="dia">22</div>
+
+          <!-- Semana 5 -->
+          <div class="dia">23</div>
+          <div class="dia">24</div>
+          <div class="dia">25</div>
+          <div class="dia">26</div>
+          <div class="dia">27</div>
+          <div class="dia">28</div>
+          <div class="dia">29</div>
+
+          <!-- Semana 6: Final de noviembre + inicio de diciembre -->
+          <div class="dia">30</div>
+          <div class="dia muted">1</div>
+          <div class="dia muted">2</div>
+          <div class="dia muted">3</div>
+          <div class="dia muted">4</div>
+          <div class="dia muted">5</div>
+          <div class="dia muted">6</div>
         </div>
       </div>
     </section>
 
-    <!-- COLUMNA DERECHA -->
+    <!-- ============================================ -->
+    <!-- COLUMNA DERECHA: Información del ciclo -->
+    <!-- ============================================ -->
     <aside class="detalles">
+      
+      <!-- Card: Día del ciclo actual -->
       <div class="box">
         <h3>Día del Ciclo</h3>
         <p><span>Día 20</span> de tu ciclo actual</p>
       </div>
 
+      <!-- Card: Leyenda de colores -->
       <div class="box">
         <h3>Leyenda</h3>
         <ul>
           <li><span class="dot periodo"></span> Período — Días de menstruación</li>
           <li><span class="dot ovulacion"></span> Ovulación — Día más fértil</li>
-          <li><span class="dot fertil"></span> Ventana fértil — Mayor probabilidad de embarazo</li>
+          <li><span class="dot fertil"></span> Ventana Fértil — Mayor probabilidad de embarazo</li>
         </ul>
       </div>
 
+      <!-- Card: Próxima ovulación -->
       <div class="box ovulacion-box">
         <h3>Próxima Ovulación</h3>
         <p>Jueves, 30 de octubre de 2025</p>
       </div>
     </aside>
+
   </main>
 
 </body>

@@ -1,3 +1,6 @@
+/* ============================================ */
+/* RESET Y CONFIGURACIÓN GLOBAL */
+/* ============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +17,9 @@ body {
   padding: 40px 20px;
 }
 
-/* HEADER */
+/* ============================================ */
+/* HEADER: Logo, título y subtítulo */
+/* ============================================ */
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -34,7 +39,9 @@ body {
   font-size: 0.9rem;
 }
 
-/* NAVIGATION */
+/* ============================================ */
+/* NAVEGACIÓN: Tabs superiores */
+/* ============================================ */
 .tabs {
   display: flex;
   justify-content: center;
@@ -61,7 +68,9 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* MAIN LAYOUT */
+/* ============================================ */
+/* LAYOUT PRINCIPAL: Diseño de 2 columnas */
+/* ============================================ */
 .contenedor {
   display: flex;
   gap: 20px;
@@ -70,7 +79,9 @@ body {
   margin-top: 40px;
 }
 
-/* COLUMNA IZQUIERDA */
+/* ============================================ */
+/* COLUMNA IZQUIERDA: Calendario */
+/* ============================================ */
 .calendario {
   background: white;
   border-radius: 15px;
@@ -91,17 +102,24 @@ body {
   margin-bottom: 20px;
 }
 
+/* Caja contenedora del calendario */
 .calendar-box {
   border: 1px solid #eee;
   border-radius: 10px;
   padding: 20px;
 }
 
+/* Encabezado del calendario: mes y navegación */
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+}
+
+.calendar-header h3 {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .calendar-header button {
@@ -112,47 +130,83 @@ body {
   height: 30px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: 0.2s;
 }
 
+.calendar-header button:hover {
+  background: #f5f5f5;
+}
+
+/* Encabezado con días de la semana */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.calendar-weekdays div {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #888;
+}
+
+/* Grid del calendario: 7 columnas para los días */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
 }
 
+/* Estilo base para cada día del calendario */
 .dia {
   text-align: center;
   padding: 10px;
   border-radius: 10px;
   font-weight: 500;
-  background: #fafafa;
+  background: #f7f7f7;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+.dia:hover {
+  transform: scale(1.05);
+}
+
+/* Días del mes anterior/siguiente (atenuados) */
 .dia.muted {
   opacity: 0.4;
+  color: #999;
 }
 
+/* Días de período (menstruación) */
 .dia.periodo {
-  background: #f48fb1;
-  color: white;
+  background: #ffe8fa;
+  color: #a51488;
 }
 
+/* Día de ovulación (más fértil) */
 .dia.ovulacion {
-  background: #f06292;
+  background: linear-gradient(90deg, #cd25fb, #ff58f1);
   color: white;
 }
 
-.dia.fertil {
-  background: linear-gradient(90deg, #dcb0ff, #c77dff);
+/* Días de ventana fértil */
+/*.dia.fertil {
+  background: linear-gradient(80deg, #cd8fff, #9000ff);
   color: white;
-}
+}*/
 
+/* Día actual/seleccionado */
 .dia.activo {
   background: #0b0524;
   color: white;
 }
 
-/* COLUMNA DERECHA */
+/* ============================================ */
+/* COLUMNA DERECHA: Cards de información */
+/* ============================================ */
 .detalles {
   display: flex;
   flex-direction: column;
@@ -160,6 +214,7 @@ body {
   flex: 0.8;
 }
 
+/* Estilo base para los cards */
 .box {
   background: white;
   border-radius: 15px;
@@ -177,6 +232,7 @@ body {
   font-weight: 600;
 }
 
+/* Lista de leyenda (sin viñetas) */
 .box ul {
   list-style: none;
   font-size: 0.9rem;
@@ -190,26 +246,56 @@ body {
   gap: 8px;
 }
 
+/* Puntos de color para la leyenda */
 .dot {
   width: 15px;
   height: 15px;
   border-radius: 50%;
   display: inline-block;
+  flex-shrink: 0;
 }
 
-.dot.periodo { background: #f48fb1; }
-.dot.ovulacion { background: #f06292; }
-.dot.fertil { background: linear-gradient(90deg, #dcb0ff, #c77dff); }
+.dot.periodo { 
+  background: #f48fb1; 
+}
 
+.dot.ovulacion { 
+  background: #f06292; 
+}
+
+.dot.fertil { 
+  background: linear-gradient(90deg, #cd25fb, #ff58f1); 
+}
+
+/* Card especial: Próxima ovulación */
 .ovulacion-box {
-  background: #f9e8f2;
-  color: #7a2e63;
+  background: #faf5ff;
+  color: #8200db;
   font-weight: 500;
+  border: #e9d4ff solid;
+   border-width: 1px;
 }
 
-/* RESPONSIVE */
+.ovulacion-box h3 {
+   font-weight: 500;
+}
+
+.ovulacion-box p {
+   color: #59168b;
+   font-size: .8rem;
+   font-weight: 400;
+}
+
+/* ============================================ */
+/* RESPONSIVE: Adaptación para móviles */
+/* ============================================ */
 @media (max-width: 900px) {
   .contenedor {
     flex-direction: column;
+  }
+  
+  .tabs button {
+    padding: 8px 20px;
+    font-size: 0.85rem;
   }
 }
