@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Ciclo - App de Fertilidad</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <div class="icono">💗</div>
+      <h1>Mi Ciclo</h1>
+      <p>Seguimiento de fertilidad y ciclo menstrual</p>
+    </div>
+
+    <nav class="tabs">
+      <button class="active">Calendario</button>
+      <button>Estadísticas</button>
+      <button>Registro Diario</button>
+      <button>Hábitos</button>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+    <!-- COLUMNA IZQUIERDA -->
+    <section class="calendario">
+      <h2>Calendario del Ciclo</h2>
+      <p>Selecciona un día para ver más detalles</p>
+
+      <div class="calendar-box">
+        <div class="calendar-header">
+          <button>&lt;</button>
+          <h3>Noviembre 2025</h3>
+          <button>&gt;</button>
+        </div>
+
+        <div class="calendar-grid">
+          <div class="dia muted">26</div>
+          <div class="dia periodo">27</div>
+          <div class="dia periodo">28</div>
+          <div class="dia periodo">29</div>
+          <div class="dia ovulacion">30</div>
+          <div class="dia periodo">31</div>
+          <div class="dia">1</div>
+
+          <div class="dia">2</div>
+          <div class="dia activo">4</div>
+          <div class="dia">5</div>
+          <div class="dia">6</div>
+          <div class="dia fertil">11</div>
+          <div class="dia fertil">12</div>
+          <div class="dia fertil">13</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLUMNA DERECHA -->
+    <aside class="detalles">
+      <div class="box">
+        <h3>Día del Ciclo</h3>
+        <p><span>Día 20</span> de tu ciclo actual</p>
+      </div>
+
+      <div class="box">
+        <h3>Leyenda</h3>
+        <ul>
+          <li><span class="dot periodo"></span> Período — Días de menstruación</li>
+          <li><span class="dot ovulacion"></span> Ovulación — Día más fértil</li>
+          <li><span class="dot fertil"></span> Ventana fértil — Mayor probabilidad de embarazo</li>
+        </ul>
+      </div>
+
+      <div class="box ovulacion-box">
+        <h3>Próxima Ovulación</h3>
+        <p>Jueves, 30 de octubre de 2025</p>
+      </div>
+    </aside>
+  </main>
+
+</body>
+</html>
