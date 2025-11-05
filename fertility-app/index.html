@@ -6,6 +6,9 @@
   <title>Mi Ciclo - App de Fertilidad</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="icon" href="Images/heart-favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -14,7 +17,7 @@
   <!-- ============================================ -->
   <header class="header">
     <div class="logo">
-      <div class="icono">💗</div>
+      <div class="icono"><i class="fa-solid fa-heart" style="color: #e60076;"></i></div>
       <h1>Mi Ciclo</h1>
       <p>Seguimiento de fertilidad y ciclo menstrual</p>
     </div>
@@ -51,7 +54,7 @@
         <!-- Encabezado con días de la semana -->
         <div class="calendar-weekdays">
           <div>Dom</div>
-          <div>lun</div>
+          <div>Lun</div>
           <div>Mar</div>
           <div>Miér</div>
           <div>Jue</div>
@@ -60,60 +63,67 @@
         </div>
 
         <!-- Grid del calendario con todos los días del mes -->
+        <!-- LÓGICA DEL CICLO:
+             - Día 1 del ciclo: 16 de octubre (inicio menstruación)
+             - Días 1-5: Período (16-20 octubre)
+             - Día 11-15: Ventana fértil (26-30 octubre)
+             - Día 14: Ovulación (29 octubre)
+             - Día 20: HOY 4 de noviembre (día actual)
+        -->
         <div class="calendar-grid">
           <!-- Semana 1: Final de octubre + inicio de noviembre -->
           <div class="dia muted">26</div>
-          <div class="dia periodo">27</div>
-          <div class="dia periodo">28</div>
-          <div class="dia periodo">29</div>
-          <div class="dia ovulacion">30</div>
-          <div class="dia periodo">31</div>
-          <div class="dia">1</div>
+          <div class="dia fertil">27</div>       <!-- Día 12: Ventana fértil -->
+          <div class="dia fertil">28</div>       <!-- Día 13: Ventana fértil -->
+          <div class="dia ovulacion">29</div>    <!-- Día 14: Ovulación -->
+          <div class="dia fertil">30</div>       <!-- Día 15: Ventana fértil -->
+          <div class="dia">31</div>              <!-- Día 16 -->
+          <div class="dia">1</div>               <!-- Día 17 -->
 
           <!-- Semana 2 -->
-          <div class="dia">2</div>
-          <div class="dia">3</div>
-          <div class="dia activo">4</div>
-          <div class="dia">5</div>
-          <div class="dia">6</div>
-          <div class="dia">7</div>
-          <div class="dia">8</div>
+          <div class="dia">2</div>               <!-- Día 18 -->
+          <div class="dia">3</div>               <!-- Día 19 -->
+          <div class="dia activo">4</div>        <!-- Día 20: HOY (día actual) -->
+          <div class="dia">5</div>               <!-- Día 21 -->
+          <div class="dia">6</div>               <!-- Día 22 -->
+          <div class="dia">7</div>               <!-- Día 23 -->
+          <div class="dia">8</div>               <!-- Día 24 -->
 
           <!-- Semana 3 -->
-          <div class="dia">9</div>
-          <div class="dia">10</div>
-          <div class="dia fertil">11</div>
-          <div class="dia fertil">12</div>
-          <div class="dia fertil">13</div>
-          <div class="dia">14</div>
-          <div class="dia">15</div>
+          <div class="dia">9</div>               <!-- Día 25 -->
+          <div class="dia">10</div>              <!-- Día 26 -->
+          <div class="dia">11</div>              <!-- Día 27 -->
+          <div class="dia">12</div>              <!-- Día 28 -->
+          <div class="dia periodo">13</div>      <!-- Día 1: Inicio nuevo ciclo -->
+          <div class="dia periodo">14</div>      <!-- Día 2: Período -->
+          <div class="dia periodo">15</div>      <!-- Día 3: Período -->
 
           <!-- Semana 4 -->
-          <div class="dia">16</div>
-          <div class="dia">17</div>
-          <div class="dia">18</div>
-          <div class="dia">19</div>
-          <div class="dia">20</div>
-          <div class="dia">21</div>
-          <div class="dia">22</div>
+          <div class="dia periodo">16</div>      <!-- Día 4: Período -->
+          <div class="dia periodo">17</div>      <!-- Día 5: Último día período -->
+          <div class="dia">18</div>              <!-- Día 6 -->
+          <div class="dia">19</div>              <!-- Día 7 -->
+          <div class="dia">20</div>              <!-- Día 8 -->
+          <div class="dia">21</div>              <!-- Día 9 -->
+          <div class="dia">22</div>              <!-- Día 10 -->
 
           <!-- Semana 5 -->
-          <div class="dia">23</div>
-          <div class="dia">24</div>
-          <div class="dia">25</div>
-          <div class="dia">26</div>
-          <div class="dia">27</div>
-          <div class="dia">28</div>
-          <div class="dia">29</div>
+          <div class="dia">23</div>              <!-- Día 11 -->
+          <div class="dia fertil">24</div>       <!-- Día 12: Ventana fértil -->
+          <div class="dia fertil">25</div>       <!-- Día 13: Ventana fértil -->
+          <div class="dia ovulacion">26</div>    <!-- Día 14: Próxima ovulación -->
+          <div class="dia fertil">27</div>       <!-- Día 15: Ventana fértil -->
+          <div class="dia">28</div>              <!-- Día 16 -->
+          <div class="dia">29</div>              <!-- Día 17 -->
 
           <!-- Semana 6: Final de noviembre + inicio de diciembre -->
-          <div class="dia">30</div>
-          <div class="dia muted">1</div>
-          <div class="dia muted">2</div>
-          <div class="dia muted">3</div>
-          <div class="dia muted">4</div>
-          <div class="dia muted">5</div>
-          <div class="dia muted">6</div>
+          <div class="dia">30</div>              <!-- Día 18 -->
+          <div class="dia muted">1</div>         <!-- Día 19 -->
+          <div class="dia muted">2</div>         <!-- Día 20 -->
+          <div class="dia muted">3</div>         <!-- Día 21 -->
+          <div class="dia muted">4</div>         <!-- Día 22 -->
+          <div class="dia muted">5</div>         <!-- Día 23 -->
+          <div class="dia muted">6</div>         <!-- Día 24 -->
         </div>
       </div>
     </section>
@@ -133,16 +143,26 @@
       <div class="box">
         <h3>Leyenda</h3>
         <ul>
-          <li><span class="dot periodo"></span> Período — Días de menstruación</li>
-          <li><span class="dot ovulacion"></span> Ovulación — Día más fértil</li>
-          <li><span class="dot fertil"></span> Ventana Fértil — Mayor probabilidad de embarazo</li>
+          <li>
+            <div> <i class="fa-solid fa-droplet"></i> Periodo</div> <div class="dias-menstruacion">Días de menstruación</div>
+          </li>
+
+          <li>
+            <div> <i class="fa-solid fa-heart-pulse"></i> Ovulación</div>
+            <div class="dia-mas-fertil">Día más fértil</div>
+          </li>
+
+          <li>
+            <div> <i class="fa-brands fa-drupal"></i> Ventana Fértil</div>
+            <div class="mayor-probabi-de-embarazo">Mayor probabilidad de embarazo</div>
+          </li>
         </ul>
       </div>
 
       <!-- Card: Próxima ovulación -->
       <div class="box ovulacion-box">
         <h3>Próxima Ovulación</h3>
-        <p>Jueves, 30 de octubre de 2025</p>
+        <p>Miércoles, 26 de noviembre de 2025</p>
       </div>
     </aside>
 

@@ -26,7 +26,7 @@ body {
 }
 
 .header .icono {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .header h1 {
@@ -180,25 +180,29 @@ body {
   color: #999;
 }
 
-/* Días de período (menstruación) */
+/* ============================================ */
+/* COLORES DEL CALENDARIO - Matching con leyenda */
+/* ============================================ */
+
+/* Días de período (menstruación) - ROSA CLARO */
 .dia.periodo {
   background: #ffe8fa;
   color: #a51488;
 }
 
-/* Día de ovulación (más fértil) */
+/* Día de ovulación (más fértil) - ROSA INTENSO CON GRADIENTE */
 .dia.ovulacion {
   background: linear-gradient(90deg, #cd25fb, #ff58f1);
   color: white;
 }
 
-/* Días de ventana fértil */
-/*.dia.fertil {
-  background: linear-gradient(80deg, #cd8fff, #9000ff);
-  color: white;
-}*/
+/* Días de ventana fértil - MORADO CLARO */
+.dia.fertil {
+  background: #e9d4ff;
+  color: #8200db;
+}
 
-/* Día actual/seleccionado */
+/* Día actual/seleccionado - NEGRO */
 .dia.activo {
   background: #0b0524;
   color: white;
@@ -232,58 +236,147 @@ body {
   font-weight: 600;
 }
 
-/* Lista de leyenda (sin viñetas) */
+/* ============================================ */
+/* LEYENDA CON ICONOS - Nuevo diseño */
+/* ============================================ */
+
+.leyenda-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.leyenda-lista li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+/* Círculos con iconos */
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.icon-circle.periodo {
+  background: #ffe8fa;
+  color: #e91e63;
+}
+
+.icon-circle.ovulacion {
+  background: linear-gradient(90deg, #cd25fb, #ff58f1);
+  color: white;
+}
+
+.icon-circle.fertil {
+  background: #e9d4ff;
+  color: #8200db;
+}
+
+/* Texto de leyenda en dos líneas */
+.leyenda-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.leyenda-texto strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.leyenda-texto span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #888;
+}
+
+/* ============================================ */
+/* PUNTOS DE COLOR (legacy - por si los necesitas) */
+/* ============================================ */
+
+/* ============================================ */
+/* LEYENDA CON ICONOS DE FONT AWESOME */
+/* ============================================ */
+
+/* Eliminar viñetas de la lista */
 .box ul {
   list-style: none;
-  font-size: 0.9rem;
-  color: #555;
+  padding: 0;
 }
 
 .box li {
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  margin-bottom: 25px;
 }
 
-/* Puntos de color para la leyenda */
-.dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
+
+/* Iconos de Font Awesome con colores */
+.box li i {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
   flex-shrink: 0;
 }
 
-.dot.periodo { 
-  background: #f48fb1; 
+/* Color del icono de período */
+.fa-droplet {
+  color: #e91e63;
 }
 
-.dot.ovulacion { 
-  background: #f06292; 
+/* Color del icono de ovulación */
+.fa-heart-pulse {
+  color: #cd25fb;
 }
 
-.dot.fertil { 
-  background: linear-gradient(90deg, #cd25fb, #ff58f1); 
+/* Color del icono de ventana fértil */
+.fa-drupal {
+  color: #8200db;
 }
 
+.box li .dias-menstruacion {
+   color: #717182;
+   font-size: 0.8rem;
+}
+
+.box li .dia-mas-fertil {
+   color: #717182;
+   font-size: 0.8rem;
+}
+
+.box li .mayor-probabi-de-embarazo {
+    color: #717182;
+   font-size: 0.8rem;
+}
+
+
+/* ============================================ */
 /* Card especial: Próxima ovulación */
+/* ============================================ */
+
 .ovulacion-box {
   background: #faf5ff;
   color: #8200db;
   font-weight: 500;
-  border: #e9d4ff solid;
-   border-width: 1px;
+  border: 1px solid #e9d4ff;
 }
 
 .ovulacion-box h3 {
-   font-weight: 500;
+  font-weight: 500;
 }
 
 .ovulacion-box p {
-   color: #59168b;
-   font-size: .8rem;
-   font-weight: 400;
+  color: #59168b;
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 /* ============================================ */
