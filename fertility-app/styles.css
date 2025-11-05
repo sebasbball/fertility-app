@@ -32,11 +32,13 @@ body {
 .header h1 {
   color: #e60076;
   font-weight: 600;
+  padding-bottom: 1rem;
 }
 
 .header p {
   color: #4a5565;
   font-size: 0.9rem;
+  padding-bottom: 1rem;
 }
 
 /* ============================================ */
@@ -229,11 +231,18 @@ body {
 .box h3 {
   font-size: 1rem;
   margin-bottom: 10px;
+  color: #0a0a0a;
 }
 
 .box span {
   color: #e91e63;
   font-weight: 600;
+}
+
+.box p {
+   padding-top: .5rem;
+   text-align: center;
+   color: #717182;
 }
 
 /* ============================================ */
@@ -300,9 +309,6 @@ body {
   color: #888;
 }
 
-/* ============================================ */
-/* PUNTOS DE COLOR (legacy - por si los necesitas) */
-/* ============================================ */
 
 /* ============================================ */
 /* LEYENDA CON ICONOS DE FONT AWESOME */
@@ -315,16 +321,25 @@ body {
 }
 
 .box li {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
+.box h3 {
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   color: #0a0a0a;
+}
 
 /* Iconos de Font Awesome con colores */
 .box li i {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   width: 24px;
   text-align: center;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* Color del icono de período */
@@ -342,19 +357,27 @@ body {
   color: #8200db;
 }
 
-.box li .dias-menstruacion {
-   color: #717182;
-   font-size: 0.8rem;
+/* Contenedor de texto (título + descripción) */
+.box li > div {
+   display: flex;
+   flex-direction: column;
+   gap: 2px;
 }
 
-.box li .dia-mas-fertil {
-   color: #717182;
-   font-size: 0.8rem;
+/* Título principal (Periodo, Ovulación, etc.) */
+.box li > div > div:first-child {
+   font-weight: 500;
+   color: #0a0a0a;
+   font-size: 0.95rem;
 }
 
-.box li .mayor-probabi-de-embarazo {
-    color: #717182;
+/* Textos secundarios (descripción) */
+.dias-menstruacion,
+.dia-mas-fertil,
+.mayor-probabi-de-embarazo {
+   color: #717182;
    font-size: 0.8rem;
+   font-weight: 400;
 }
 
 
@@ -367,10 +390,12 @@ body {
   color: #8200db;
   font-weight: 500;
   border: 1px solid #e9d4ff;
+  padding: 10px 1.5rem 20px;
 }
 
 .ovulacion-box h3 {
   font-weight: 500;
+  color: #8200db;
 }
 
 .ovulacion-box p {
