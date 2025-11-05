@@ -404,8 +404,333 @@ body {
   font-weight: 400;
 }
 
+
 /* ============================================ */
-/* RESPONSIVE: Adaptación para móviles */
+/* NAVEGACIÓN: Tabs superiores */
+/* ============================================ */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  background: #ececf0;
+  border-radius: 40px;
+  padding: 6px;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 8px 55px;
+  border-radius: 40px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #0a0a0a;
+  transition: 0.3s;
+}
+
+.tabs button.active {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ============================================ */
+/* MENÚ HAMBURGUESA (solo CSS) */
+/* ============================================ */
+
+/* Ocultar el checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Botón hamburguesa (oculto por defecto) */
+.hamburger {
+  display: none;
+  background: #e60076;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  background: #c70066;
+}
+
+/* ============================================ */
+/* LAYOUT PRINCIPAL: Diseño de 2 columnas */
+/* ============================================ */
+.contenedor {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1100px;
+  margin-top: 40px;
+}
+
+/* ============================================ */
+/* COLUMNA IZQUIERDA: Calendario */
+/* ============================================ */
+.calendario {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 25px;
+  flex: 1;
+}
+
+.calendario h2 {
+  font-size: 1.1rem;
+  color: #0a0a0a;
+  margin-bottom: 6px;
+}
+
+.calendario p {
+  color: #717182;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Caja contenedora del calendario */
+.calendar-box {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Encabezado del calendario: mes y navegación */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.calendar-header button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.calendar-header button:hover {
+  background: #f5f5f5;
+}
+
+/* Encabezado con días de la semana */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.calendar-weekdays div {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #888;
+}
+
+/* Grid del calendario: 7 columnas para los días */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+/* Estilo base para cada día del calendario */
+.dia {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  background: #f7f7f7;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dia:hover {
+  transform: scale(1.05);
+}
+
+/* Días del mes anterior/siguiente (atenuados) */
+.dia.muted {
+  opacity: 0.4;
+  color: #999;
+}
+
+/* ============================================ */
+/* COLORES DEL CALENDARIO - Matching con leyenda */
+/* ============================================ */
+
+/* Días de período (menstruación) - ROSA CLARO */
+.dia.periodo {
+  background: #ffe8fa;
+  color: #a51488;
+}
+
+/* Día de ovulación (más fértil) - ROSA INTENSO CON GRADIENTE */
+.dia.ovulacion {
+  background: linear-gradient(90deg, #cd25fb, #ff58f1);
+  color: white;
+}
+
+/* Días de ventana fértil - MORADO CLARO */
+.dia.fertil {
+  background: #e9d4ff;
+  color: #8200db;
+}
+
+/* Día actual/seleccionado - NEGRO */
+.dia.activo {
+  background: #0b0524;
+  color: white;
+}
+
+/* ============================================ */
+/* COLUMNA DERECHA: Cards de información */
+/* ============================================ */
+.detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 0.8;
+}
+
+/* Estilo base para los cards */
+.box {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 20px;
+}
+
+.box h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #0a0a0a;
+}
+
+.box span {
+  color: #e91e63;
+  font-weight: 600;
+}
+
+.box p {
+   padding-top: .5rem;
+   text-align: center;
+   color: #717182;
+}
+
+/* ============================================ */
+/* LEYENDA CON ICONOS DE FONT AWESOME */
+/* ============================================ */
+
+/* Eliminar viñetas de la lista */
+.box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.box h3 {
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   color: #0a0a0a;
+}
+
+/* Iconos de Font Awesome con colores */
+.box li i {
+  font-size: 1.3rem;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Color del icono de período */
+.fa-droplet {
+  color: #e91e63;
+}
+
+/* Color del icono de ovulación */
+.fa-heart-pulse {
+  color: #cd25fb;
+}
+
+/* Color del icono de ventana fértil */
+.fa-drupal {
+  color: #8200db;
+}
+
+/* Contenedor de texto (título + descripción) */
+.box li > div {
+   display: flex;
+   flex-direction: column;
+   gap: 2px;
+}
+
+/* Título principal (Periodo, Ovulación, etc.) */
+.box li > div > div:first-child {
+   font-weight: 500;
+   color: #0a0a0a;
+   font-size: 0.95rem;
+}
+
+/* Textos secundarios (descripción) */
+.dias-menstruacion,
+.dia-mas-fertil,
+.mayor-probabi-de-embarazo {
+   color: #717182;
+   font-size: 0.8rem;
+   font-weight: 400;
+}
+
+/* ============================================ */
+/* Card especial: Próxima ovulación */
+/* ============================================ */
+
+.ovulacion-box {
+  background: #faf5ff;
+  color: #8200db;
+  font-weight: 500;
+  border: 1px solid #e9d4ff;
+  padding: 10px 1.5rem 20px;
+}
+
+.ovulacion-box h3 {
+  font-weight: 500;
+  color: #8200db;
+}
+
+.ovulacion-box p {
+  color: #59168b;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* ============================================ */
+/* RESPONSIVE: Adaptación para tablets */
 /* ============================================ */
 @media (max-width: 900px) {
   .contenedor {
@@ -415,5 +740,210 @@ body {
   .tabs button {
     padding: 8px 20px;
     font-size: 0.85rem;
+  }
+}
+
+/* ============================================ */
+/* RESPONSIVE: Adaptación para móviles */
+/* ============================================ */
+@media (max-width: 600px) {
+  /* Reducir padding general del body */
+  body {
+    padding: 20px 10px;
+  }
+
+  /* Header más compacto */
+  .header {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .header .icono {
+    font-size: 2rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .header p {
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Mostrar botón hamburguesa en móvil */
+  .hamburger {
+    display: inline-block;
+  }
+
+  /* Ocultar tabs por defecto en móvil */
+  .tabs {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 1000;
+    margin-top: 10px;
+  }
+
+  /* Mostrar tabs cuando el checkbox está marcado */
+  .menu-toggle:checked ~ .tabs {
+    display: flex;
+  }
+
+  /* Cambiar icono cuando está abierto */
+  .menu-toggle:checked ~ .hamburger i::before {
+    content: "\f00d"; /* Código de Font Awesome para "X" */
+  }
+
+  .tabs button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    text-align: left;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .tabs button.active {
+    background: #e60076;
+    color: white;
+  }
+
+  /* Contenedor principal */
+  .contenedor {
+    width: 100%;
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  /* Calendario más compacto */
+  .calendario {
+    padding: 15px;
+  }
+
+  .calendario h2 {
+    font-size: 1rem;
+  }
+
+  .calendario p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+
+  .calendar-box {
+    padding: 15px;
+  }
+
+  .calendar-header h3 {
+    font-size: 0.9rem;
+  }
+
+  .calendar-header button {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+
+  /* Días de la semana más pequeños */
+  .calendar-weekdays {
+    gap: 5px;
+  }
+
+  .calendar-weekdays div {
+    font-size: 0.65rem;
+  }
+
+  /* Grid del calendario ajustado */
+  .calendar-grid {
+    gap: 5px;
+  }
+
+  .dia {
+    padding: 8px 4px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  /* Cards de la columna derecha */
+  .detalles {
+    gap: 12px;
+  }
+
+  .box {
+    padding: 15px;
+  }
+
+  .box h3 {
+    font-size: 0.95rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Leyenda más compacta */
+  .box li {
+    margin-bottom: 15px;
+  }
+
+  .box li i {
+    font-size: 1.1rem;
+    width: 20px;
+  }
+
+  .box li > div > div:first-child {
+    font-size: 0.9rem;
+  }
+
+  .dias-menstruacion,
+  .dia-mas-fertil,
+  .mayor-probabi-de-embarazo {
+    font-size: 0.75rem;
+  }
+
+  /* Card de próxima ovulación */
+  .ovulacion-box {
+    padding: 10px 1rem 15px;
+  }
+
+  .ovulacion-box h3 {
+    font-size: 0.95rem;
+  }
+
+  .ovulacion-box p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Para pantallas MUY pequeñas (menos de 360px) */
+@media (max-width: 360px) {
+  body {
+    padding: 15px 8px;
+  }
+
+  .calendario,
+  .box {
+    padding: 12px;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .dia {
+    padding: 6px 2px;
+    font-size: 0.8rem;
+  }
+
+  .calendar-weekdays div {
+    font-size: 0.6rem;
   }
 }
