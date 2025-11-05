@@ -752,10 +752,15 @@ body {
     padding: 20px 10px;
   }
 
-  /* Header más compacto */
+  /* Header con logo centrado y hamburguesa a la derecha */
   .header {
     margin-bottom: 20px;
     position: relative;
+  }
+
+  .header .logo {
+    position: relative;
+    padding-top: 10px;
   }
 
   .header .icono {
@@ -772,9 +777,19 @@ body {
     padding-bottom: 0.5rem;
   }
 
-  /* Mostrar botón hamburguesa en móvil */
+   /* Botón hamburguesa fijo en esquina superior derecha */
   .hamburger {
     display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    margin-top: 0;
+    background: linear-gradient(135deg, #f8f1f8, #eef0fb);
+    color: #0b0524;
+  }
+
+  .hamburger:hover {
+   background: linear-gradient(135deg, #f8f1f8, #eef0fb);;
   }
 
   /* Ocultar tabs por defecto en móvil */
@@ -783,10 +798,9 @@ body {
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 300px;
+    right: 10px;
+    transform: none;
+    width: 250px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
@@ -802,7 +816,7 @@ body {
 
   /* Cambiar icono cuando está abierto */
   .menu-toggle:checked ~ .hamburger i::before {
-    content: "\f00d"; /* Código de Font Awesome para "X" */
+    content: "\f00d";
   }
 
   .tabs button {
@@ -815,8 +829,8 @@ body {
   }
 
   .tabs button.active {
-    background: #e60076;
-    color: white;
+    background: #ffe8fa;
+    color: #0a0a0a;
   }
 
   /* Contenedor principal */
@@ -833,11 +847,13 @@ body {
 
   .calendario h2 {
     font-size: 1rem;
+    text-align: center;
   }
 
   .calendario p {
     font-size: 0.85rem;
     margin-bottom: 15px;
+    text-align: center;
   }
 
   .calendar-box {
@@ -887,6 +903,7 @@ body {
     font-size: 0.95rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    text-align: center;
   }
 
   /* Leyenda más compacta */
@@ -916,10 +933,12 @@ body {
 
   .ovulacion-box h3 {
     font-size: 0.95rem;
+    text-align: left;
   }
 
   .ovulacion-box p {
     font-size: 0.8rem;
+    text-align: left;
   }
 }
 
